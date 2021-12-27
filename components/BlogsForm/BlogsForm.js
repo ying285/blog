@@ -20,7 +20,7 @@ const BlogsForm = (props) => {
     const enteredContent = contentInputRef.current.value.trim();
 
     if (enteredTitle !== "" && enteredContent !== "" && enteredImage !== "") {
-      const theDate = new Date().toString().slice(0, 16);
+      const theDate = new Date().toString().slice(0, 25);
       const blogItems = {
         title: enteredTitle,
         image: enteredImage,
