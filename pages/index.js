@@ -1,5 +1,4 @@
 import BlogList from "../components/Blogs/BlogList/BlogList";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { MongoClient } from "mongodb";
 
 function HomePage(props) {
