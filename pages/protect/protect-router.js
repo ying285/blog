@@ -1,38 +1,14 @@
-async function getAuthSession(context) {
-  return context.req.session.get("user");
-}
+import { useAuthSession } from "../../.next/lib/hooks/user";
 
-const ProtectedSSRoute = ({ authenticated, user }) => {
-  if (!authenticated) {
-    return (
-      <div>
-        <span>You are not authenticated :(</span>
-      </div>
-    );
-  }
+const ProtectedPage = () => {
+  const user = useAuthSession();
+
+  if (!user) return null;
   return (
     <div>
-      <span>You are authenticated as: {user} :)</span>
+      <span>You are authenticated as: {user}</span>
     </div>
   );
 };
 
-export function getServerSideProps(context) {
-  const authSession = getAuthSession(context);
-  if (!authSession) {
-    return {
-      props: {
-        authenticated: false,
-      },
-    };
-  }
-
-  return {
-    props: {
-      authenticated: true,
-      user: authSession.user,
-    },
-  };
-}
-
-export default ProtectedSSRoute;
+export default ProtectedPage;

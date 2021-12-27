@@ -1,5 +1,5 @@
 import classes from "./Signup.module.css";
-import { useState, useRef, useContext } from "react";
+import { useRef, useContext } from "react";
 import AuthContext from "../store/auth-context";
 import { useRouter } from "next/router";
 
