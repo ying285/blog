@@ -1,8 +1,6 @@
 import BlogsForm from "../../components/BlogsForm/BlogsForm";
-import { useRouter } from "next/router";
 
-function addFormPage() {
-  const router = useRouter();
+function AddFormPage() {
   async function addBlogItemsHandler(blogItems) {
     const fd = new FormData();
     fd.append("title", blogItems.title);
@@ -37,10 +35,9 @@ function addFormPage() {
     // });
     const data = await response.json();
     console.log(data);
-    router.push("/");
   }
 
   return <BlogsForm onAddBlogItems={addBlogItemsHandler} />;
 }
 
-export default addFormPage;
+export default AddFormPage;
