@@ -1,0 +1,21 @@
+.detail {
+  text-align: center;
+  color: #5f5b57;
+}
+
+.detail img {
+  width: 100%;
+}
+
+.detail h1 {
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 576px) {
+  .detail h1 {
+    font-size: 1.2rem;
+  }
+  .detail p {
+    font-size: 0.9rem;
+  }
+}
